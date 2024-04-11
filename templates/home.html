@@ -104,8 +104,17 @@
             <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required />
         </div>
     </form>
-    <h2>
+    <h2 id="output">
        THE  prediction is {{results}}
     </h2>
+    <script>
+        window.onload = function() {
+            const output = document.getElementById("output");
+            const result = parseInt("{{results}}");
+            if (!isNaN(result) && result >= 100) {
+                output.innerText = "THE prediction is 100";
+            }
+        };
+    </script>
    <body>
 </html>
